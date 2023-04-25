@@ -1,0 +1,101 @@
+﻿
+@{
+    ViewBag.Title = "GetAll";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript" src="~/Scripts/ProductoCRUD/Producto.js"></script>
+<link href="~/Content/Site.css" />
+
+<h2>GetAll</h2>
+<div>
+    <button class="btn btn-success" onclick="showForm()">Agregar</button>
+</div>
+
+
+<table class="table table-bordered table-responsive" id="producto">
+    <thead>
+        <tr>
+            <td class="text-center"> <h4>Actualizar</h4></td>
+            <td class="text-center"><h4>Nombre</h4></td>
+            <td class="text-center"><h4>Descripcion</h4></td>
+            <td class="text-center"><h4>PrecioUnitario</h4></td>
+            <td class="text-center"><h4>Stock</h4></td>
+            <td class="text-center"><h4>Departamento</h4></td>
+            <td class="text-center"><h4>Area</h4></td>
+            <td class="text-center"><h4>Proveedor</h4></td>
+            <td class="text-center"><h4>Eliminar</h4></td>
+        </tr>
+          <thead>
+    <tbody>
+    </tbody>
+
+</table>
+
+
+
+
+
+
+
+<div class="modal fade" id="ModalUpdate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">×</button>
+                <h4 class="modal-title" id="myModalLabel"> Producto</h4>
+            </div>
+
+            <div class="modal-body">
+                <form id="formModal">
+                    <label for="recipient-name" class="col-form-label">ID:</label>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="txtIdProducto"  placeholder="IdDelProducto" disabled="disabled" />
+                    </div>
+                    <label for="recipient-name" class="col-form-label">Nombre:</label>
+                    
+                    <div class="form-group">
+                        <label id="lblNombre"> </label>
+                        <input type="text" class="form-control" id="txtNombre" pattern="^.{0,30}$" maxlength="30" onblur="return validarfor(event,lblNombre);" onkeypress="return SoloLetras(event,lblNombre)" placeholder="Nombre" required />
+                    </div>
+                    <label for="recipient-name" class="col-form-label">Descripcion:</label>
+                    <div class="form-group">
+                        <label id="lblDescripcion"> </label>
+                        <textarea class="form-control" id="txtDescripcion" pattern="^.{0,40}$" maxlength="40"  onkeypress="return SoloLetras(event,lblDescripcion)" placeholder="Descripcion" required ></textarea>
+                        @*<input type="text" class="form-control" id="txtDescripcion" pattern="^.{0,40}$" maxlength="40" onkeypress="return LetrasYNumeros(event)" placeholder="Descripcion" />*@
+
+                    </div>
+                    <label for="recipient-name" class="col-form-label">Precio Unitario:</label>
+                   
+                    <div class="form-group">
+                        <label id="lblPrecioUnitario"> </label>
+                        <input type="number" class="form-control" id="txtPrecioUnitario" onkeypress="return SoloNumero(event,lblPrecioUnitario)" min="1" max="2000" required placeholder="PrecioUnitario" />
+                    </div>
+                    <label for="recipient-name" class="col-form-label">Cantidad en Stock:</label>
+                    <div class="form-group">
+                        <label id="lblStock"> </label>
+                        <input type="number" class="form-control" id="txtStock"  onkeypress="return SoloNumero(event,lblStock)" required placeholder="Stock" />
+                    </div>
+                    <label for="recipient-name" class="col-form-label">ID del departamento:</label>
+                    <div class="form-group">
+                        <label id="lblDepartamento"> </label>
+                        <input type="number" class="form-control" id="txtIdDepartamento" required onkeypress="return SoloNumero(event,lblDepartamento)" placeholder="IdDepartamento" />
+                    </div>
+                    <label for="recipient-name" class="col-form-label">ID del proveedor:</label>
+                    <div class="form-group">
+                        <label id="lblProveedor"> </label>
+                        <input type="number" class="form-control" id="txtIdProveedor" required  onkeypress="return SoloNumero(event,lblProveedor)" placeholder="IdProveedor" />
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-warning glyphicon glyphicon-pencil" id="btnUpdate" onclick="Update()">Actualizar</button>
+                <button type="button" class="btn btn-success" id="btnAdd" onclick="Add()">Agregar</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>

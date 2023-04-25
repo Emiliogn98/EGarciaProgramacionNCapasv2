@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="92c255622d5f45abb27198ca67f6209f" Name="Diagram1">
+        <EntityTypeShape EntityType="EGarciaProgramacionNCapas.Rol" Width="1.5" PointX="0.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EGarciaProgramacionNCapas.Usuario" Width="1.5" PointX="3.625" PointY="0.625" IsExpanded="true" />
+        <AssociationConnector Association="EGarciaProgramacionNCapas.FK__Usuario__IdRol__21B6055D" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="EGarciaProgramacionNCapas.Colonia" Width="1.5" PointX="7.5" PointY="6.125" />
+        <EntityTypeShape EntityType="EGarciaProgramacionNCapas.Direccion" Width="1.5" PointX="9.75" PointY="3.25" />
+        <EntityTypeShape EntityType="EGarciaProgramacionNCapas.Estado" Width="1.5" PointX="3" PointY="6.25" />
+        <EntityTypeShape EntityType="EGarciaProgramacionNCapas.Municipio" Width="1.5" PointX="5.25" PointY="6.25" />
+        <EntityTypeShape EntityType="EGarciaProgramacionNCapas.Pais" Width="1.5" PointX="0.75" PointY="6.375" />
+        <EntityTypeShape EntityType="EGarciaProgramacionNCapas.Producto" Width="1.5" PointX="6.75" PointY="0.75" />
+        <AssociationConnector Association="EGarciaProgramacionNCapas.FK__Colonia__IdMunic__30F848ED" />
+        <AssociationConnector Association="EGarciaProgramacionNCapas.FK__Direccion__IdCol__33D4B598" />
+        <AssociationConnector Association="EGarciaProgramacionNCapas.FK__Direccion__IdUsu__34C8D9D1" />
+        <AssociationConnector Association="EGarciaProgramacionNCapas.FK__Estado__IdPais__267ABA7A" />
+        <AssociationConnector Association="EGarciaProgramacionNCapas.FK__Municipio__IdEst__29572725" />
+        <EntityTypeShape EntityType="EGarciaProgramacionNCapas.Area" Width="1.5" PointX="2.25" PointY="10" />
+        <EntityTypeShape EntityType="EGarciaProgramacionNCapas.Departamento" Width="1.5" PointX="4.5" PointY="9.875" />
+        <EntityTypeShape EntityType="EGarciaProgramacionNCapas.Proveedor" Width="1.5" PointX="4.5" PointY="12.625" />
+        <AssociationConnector Association="EGarciaProgramacionNCapas.FK__Departame__IdAre__4222D4EF" />
+        <AssociationConnector Association="EGarciaProgramacionNCapas.FK__Producto__IdDepa__44FF419A" />
+        <AssociationConnector Association="EGarciaProgramacionNCapas.FK__Producto__IdProv__45F365D3" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
